@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+  }
+  .seccion {
+    display: none;
+  }
+  .seccion.active {
+    display: block;
+  }
+  .respuesta-admin {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f3f4f6;
+    border-left: 4px solid #3b82f6;
+  }  
