@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plataforma Secretaría - Estudiantes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Plataforma Secretaría - Escuela de Ciencias Exactas</h1>
+    <p class="text-sm">Universidad Sergio Arboleda</p>
+  </header>
+
+  <div id="auth" class="p-6 max-w-md mx-auto">
+    <div id="registro" class="space-y-4">
+      <h2 class="text-xl font-bold">Registro</h2>
+      <input id="reg-email" type="email" placeholder="Correo" class="input" />
+      <input id="reg-username" type="text" placeholder="Usuario" class="input" />
+      <input id="reg-password" type="password" placeholder="Contraseña" class="input" />
+      <select id="reg-rol" class="input">
+        <option value="usuario">Usuario</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button onclick="registrar()" class="btn-blue w-full">Registrarse</button>
+    </div>
+
+    <hr class="my-6" />
+
+    <div id="inicio-sesion" class="space-y-4">
+      <h2 class="text-xl font-bold">Iniciar Sesión</h2>
+      <input id="login-email" type="email" placeholder="Correo" class="input" />
+      <input id="login-password" type="password" placeholder="Contraseña" class="input" />
+      <button onclick="iniciarSesion()" class="btn-green w-full">Iniciar Sesión</button>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <nav class="flex justify-between items-center bg-blue-700 text-white p-2">
+      <div class="space-x-4">
+        <button onclick="mostrarSeccion('foro')">Foro</button>
+        <button onclick="mostrarSeccion('publicaciones')">Publicaciones</button>
+        <button onclick="mostrarSeccion('tickets')">Tickets</button>
+      </div>
+      <button onclick="cerrarSesion()" class="bg-red-500 px-3 py-1 rounded">Cerrar sesión</button>
+    </nav>
+
+    <main class="p-6 space-y-8">
+      <section id="foro" class="seccion">
+        <h2 class="text-xl font-bold mb-4">Foro de Dudas</h2>
+        <form id="form-foro" class="mb-4">
+          <input id="pregunta" type="text" placeholder="Escribe tu duda" class="input" required />
+          <button type="submit" class="btn-blue">Publicar</button>
+        </form>
+        <div id="foro-lista" class="space-y-4"></div>
+      </section>
+
+      <section id="publicaciones" class="seccion hidden">
+        <h2 class="text-xl font-bold mb-4">Anuncios de la Secretaría</h2>
+        <div id="lista-publicaciones" class="space-y-2"></div>
+      </section>
+
+      <section id="tickets" class="seccion hidden">
+        <h2 class="text-xl font-bold mb-4">Sistema de Tickets</h2>
+        <form id="form-ticket" class="mb-4">
+          <input id="nombre" type="text" placeholder="Tu nombre" class="input" required />
+          <textarea id="mensaje" placeholder="Describe tu solicitud" class="input" required></textarea>
+          <button type="submit" class="btn-green">Enviar Ticket</button>
+        </form>
+        <div id="ticket-lista" class="space-y-4"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
