@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plataforma Secretaría - Estudiantes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Plataforma Secretaría - Escuela de Ciencias Exactas</h1>
+    <p class="text-sm">Universidad Sergio Arboleda</p>
+  </header>
+
+  <div id="app" class="p-6 max-w-4xl mx-auto">
+
+    <!-- Navegación -->
+    <nav class="flex justify-between items-center bg-blue-700 text-white p-2 mb-6">
+      <div class="space-x-4">
+        <button onclick="mostrarSeccion('foro')">Foro</button>
+        <button onclick="mostrarSeccion('publicaciones')">Publicaciones</button>
+        <button onclick="mostrarSeccion('tickets')">Tickets</button>
+      </div>
+      <button class="bg-red-500 px-3 py-1 rounded">Cerrar sesión</button>
+    </nav>
+
+    <main class="space-y-12">
+
+      <!-- Foros -->
+      <section id="foro" class="seccion">
+        <h2 class="text-2xl font-bold mb-4">Foros de Dudas</h2>
+
+        <!-- Foro Prácticas Laborales -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2">Prácticas Laborales</h3>
+          <form class="mb-2">
+            <input type="text" placeholder="Escribe tu duda" class="border rounded p-2 mr-2 w-64">
+            <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded">Publicar</button>
+          </form>
+          <div class="space-y-2">
+            <div class="p-3 bg-white rounded shadow">¿Cuándo abren convocatorias para las prácticas 2025-I?</div>
+            <div class="p-3 bg-white rounded shadow">¿Hay bolsa de empleos para egresados de Ingeniería de Sistemas?</div>
+          </div>
+        </div>
+
+        <!-- Foro Inscripción de Materias -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2">Inscripción de Materias</h3>
+          <form class="mb-2">
+            <input type="text" placeholder="Escribe tu duda" class="border rounded p-2 mr-2 w-64">
+            <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded">Publicar</button>
+          </form>
+          <div class="space-y-2">
+            <div class="p-3 bg-white rounded shadow">¿Puedo inscribir una materia si no he aprobado el prerrequisito?</div>
+            <div class="p-3 bg-white rounded shadow">¿Hasta qué fecha puedo modificar mi horario?</div>
+          </div>
+        </div>
+
+        <!-- Foro Plan de Estudios -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2">Plan de Estudios</h3>
+          <form class="mb-2">
+            <input type="text" placeholder="Escribe tu duda" class="border rounded p-2 mr-2 w-64">
+            <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded">Publicar</button>
+          </form>
+          <div class="space-y-2">
+            <div class="p-3 bg-white rounded shadow">¿Dónde puedo descargar el plan de estudios actualizado?</div>
+            <div class="p-3 bg-white rounded shadow">¿Puedo homologar materias de otro programa?</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publicaciones -->
+      <section id="publicaciones" class="seccion hidden">
+        <h2 class="text-2xl font-bold mb-4">Publicaciones Académicas</h2>
+
+        <!-- Publicación 1 -->
+        <div class="bg-white p-4 rounded shadow mb-4">
+          <h3 class="text-xl font-semibold mb-2">Feria Laboral Sergio Emplea 2024</h3>
+          <img src="img/FL.png" alt="Feria Laboral" class="rounded mb-2">
+          <p>Te invitamos a participar en nuestra feria laboral del 15 al 17 de octubre en el campus de Bogotá.</p>
+        </div>
+
+        <!-- Publicación 2 -->
+        <div class="bg-white p-4 rounded shadow mb-4">
+          <h3 class="text-xl font-semibold mb-2">Feria de Innovación y Proyectos 2024</h3>
+          <img src="img/FI.png" alt="Feria de Innovación" class="rounded mb-2">
+          <p>Conoce los proyectos destacados de estudiantes y egresados el próximo 25 de septiembre en el auditorio principal.</p>
+        </div>
+
+        <!-- Botón para subir imagen y texto -->
+        <form class="space-y-2">
+          <input type="text" placeholder="Título de la publicación" class="border rounded p-2 w-full">
+          <textarea placeholder="Descripción" class="border rounded p-2 w-full"></textarea>
+          <input type="file" accept="image/*" class="block">
+          <button type="submit" class="bg-green-600 text-white px-3 py-1 rounded">Publicar</button>
+        </form>
+      </section>
+
+      <!-- Tickets -->
+      <section id="tickets" class="seccion hidden">
+        <h2 class="text-2xl font-bold mb-4">Sistema de Tickets</h2>
+
+        <form class="mb-4 space-y-2">
+          <input type="text" placeholder="Tu nombre" class="border rounded p-2 w-full">
+          <textarea placeholder="Describe tu solicitud" class="border rounded p-2 w-full"></textarea>
+          <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded">Enviar Ticket</button>
+        </form>
+
+        <!-- Tickets existentes -->
+        <div class="space-y-2">
+          <div class="p-3 bg-white rounded shadow">
+            <strong>Camila Pérez:</strong> No puedo inscribir la materia de 'Bases de Datos' porque no me aparece habilitada.
+          </div>
+          <div class="p-3 bg-white rounded shadow">
+            <strong>Daniel Gómez:</strong> El sistema me bloquea la inscripción por prerrequisito, pero ya aprobé la materia.
+          </div>
+          <div class="p-3 bg-white rounded shadow">
+            <strong>Laura Sánchez:</strong> No encuentro la opción para modificar mi horario desde el portal.
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.seccion').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
