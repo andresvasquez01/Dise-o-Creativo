@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plataforma Secretaría - Estudiantes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Plataforma Secretaría - Escuela de Ciencias Exactas</h1>
+    <p class="text-sm">Universidad Sergio Arboleda</p>
+  </header>
+
+<div id="auth" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-900 via-blue-600 to-blue-300">
+  <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
+
+    <!-- Sección de login -->
+    <div id="inicio-sesion" class="space-y-4">
+      <h3 class="text-xl font-semibold text-center text-gray-700">USER LOGIN</h3>
+      <input id="login-email" type="email" placeholder="Correo" class="input" />
+      <input id="login-password" type="password" placeholder="Contraseña" class="input" />
+
+      <div class="flex justify-between text-sm text-gray-600">
+        <label><input type="checkbox" /> Recordarme</label>
+        <a href="forgot-password.html" class="text-blue-600 hover:underline">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button onclick="iniciarSesion()" class="btn-blue w-full">Iniciar Sesión</button>
+    </div>
+
+    <hr class="my-6" />
+
+    <!-- Sección de registro -->
+    <div id="registro" class="space-y-4">
+      <h3 class="text-xl font-semibold text-center text-gray-700">REGISTRO</h3>
+      <input id="reg-email" type="email" placeholder="Correo" class="input" />
+      <input id="reg-username" type="text" placeholder="Usuario" class="input" />
+      <input id="reg-password" type="password" placeholder="Contraseña" class="input" />
+      <select id="reg-rol" class="input">
+        <option value="usuario">Usuario</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button onclick="registrar()" class="btn-green w-full">Registrarse</button>
+    </div>
+  </div>
+</div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
